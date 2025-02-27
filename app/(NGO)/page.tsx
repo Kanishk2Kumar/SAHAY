@@ -7,7 +7,7 @@ export default function Home() {
     <div>
       <Hero />
       <Features />
-      <AnimatedTestimonialsDemo />
+      {/* <AnimatedTestimonialsDemo /> */}
     </div>
   );
 }

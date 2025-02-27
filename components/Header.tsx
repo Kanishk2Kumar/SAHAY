@@ -73,7 +73,7 @@ const Header = () => {
             </button>
           </Link>
           </li><li className="relative group">
-            <Link href="/all-campaigns">
+            <Link href="/tax-benifits">
             <button className="text-base cursor-pointer capitalize text-gray-500">
               Tax Benifits
             </button>
