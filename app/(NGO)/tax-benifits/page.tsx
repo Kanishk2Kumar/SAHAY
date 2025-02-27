@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { HfInference } from "@huggingface/inference";
 
-const HF_TOKEN = "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"; // Replace with your Hugging Face API token
+const HF_TOKEN = "HF_TOKEN"; // Replace with your Hugging Face API token
 const inference = new HfInference(HF_TOKEN);
 
 const TaxBenefits = () => {
