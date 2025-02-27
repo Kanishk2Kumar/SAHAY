@@ -1,4 +1,4 @@
-import { LoginForm } from "@/components/authForms/sign-Provider"
+import { SignInProviderForm } from "@/components/authForms/sign-Provider"
 
 export default function LoginPage() {
   return (
@@ -7,7 +7,7 @@ export default function LoginPage() {
         <a href="#" className="flex items-center gap-2 self-center font-medium">
         <h1 className="font-cormorant-garamond text-4xl">SAHAY</h1>
         </a>
-        <LoginForm />
+        <SignInProviderForm />
       </div>
     </div>
   )
