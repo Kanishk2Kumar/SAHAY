@@ -1,0 +1,9 @@
+import { createClient } from '@supabase/supabase-js'
+
+const SUPABASE_URL = "https://rtivegdhhpktfuvurfvj.supabase.co";
+const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ0aXZlZ2RoaHBrdGZ1dnVyZnZqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzgyMTI4NTMsImV4cCI6MjA1Mzc4ODg1M30.zEV32oKnHE4tLTyMHhiPbGun05xvFEQWkCEh7vhv_z4";
+const SUPABASE_SERVICE_ROLE="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ0aXZlZ2RoaHBrdGZ1dnVyZnZqIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTczODIxMjg1MywiZXhwIjoyMDUzNzg4ODUzfQ.U3qUzXng75yOkTp8WmX37DgEK1gSQb0H8MP0gp8dK1M"
+
+
+export const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+export const supabaseAdminRole = createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE);
