@@ -2,12 +2,11 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { ModeToggle } from "./ModeToggle";
 import { Button } from "./ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { useState, useEffect } from "react";
-import { supabase } from "../utils/supabase/client";
+import { supabase } from "../lib/utils/client";
 
 const Header = () => {
   const [user, setUser] = useState<any>(null); // Store the user object
@@ -37,7 +36,7 @@ const Header = () => {
     } else if (user?.email) {
       return user.email.charAt(0).toUpperCase();
     }
-    return "U"; // Default to "U" if no user data is available
+    return "U";
   };
 
   return (
@@ -73,6 +72,12 @@ const Header = () => {
               Impact Score
             </button>
           </Link>
+          </li><li className="relative group">
+            <Link href="/all-campaigns">
+            <button className="text-base cursor-pointer capitalize text-gray-500">
+              Tax Benifits
+            </button>
+            </Link>
           </li>
           <li>
             <ModeToggle />

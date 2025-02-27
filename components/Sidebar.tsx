@@ -9,7 +9,7 @@ import {
   SidebarRail,
 } from "@/components/ui/sidebar";
 import { ModeToggle } from "./ModeToggle";
-import { supabase } from "@/utils/supabase/client"; // Import Supabase client
+import { supabase } from "@/lib/utils/client"; // Import Supabase client
 
 const data = {
   navMain: [

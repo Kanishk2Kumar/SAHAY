@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import { supabase } from "@/utils/supabase/client"; // Import Supabase client
+import { supabase } from "@/lib/utils/client"; // Import Supabase client
 import AdminHeader from "@/components/AdminHeader";
 import { AdminSidebar } from "@/components/Sidebar";
 import { SidebarProvider } from "@/components/ui/sidebar";

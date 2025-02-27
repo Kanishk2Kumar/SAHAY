@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
-import { supabase } from "@/utils/supabase/client";
+import { supabase } from "@/lib/utils/client";
 import { IconClipboardCopy, IconFileBroken, IconAlertCircle } from "@tabler/icons-react";
 
 export default function Dashboard() {

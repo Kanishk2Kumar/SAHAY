@@ -2,7 +2,7 @@
 
 import { createContext, useContext, useEffect, useState, ReactNode } from "react";
 import { User } from "@supabase/supabase-js";
-import { supabase } from "../utils/supabase/client";
+import { supabase } from "../lib/utils/client";
 
 interface UserContextType {
   user: User | null;
@@ -18,10 +18,9 @@ export const UserProvider = ({ children }: { children: ReactNode }) => {
   const [userDetails, setUserDetails] = useState<any | null>(null); // For storing the full user details
 
   useEffect(() => {
-    // Function to fetch user details from the `user` table based on user ID
     const getUserDetails = async (userId: string) => {
       const { data, error } = await supabase
-        .from("users") // Replace with your actual table name
+        .from("user") // Replace with your actual table name
         .select("*")
         .eq("userid", userId)
         .single(); // Assuming userId is unique, so we expect a single row
