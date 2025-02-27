@@ -79,9 +79,12 @@ export function LoginForm({
                 <Label htmlFor="type">Type</Label>
                 <select id="type" className="border rounded-md p-2" required>
                   <option value="">Select Type</option>
-                  <option value="doctor">Doctor</option>
-                  <option value="nurse">Nurse</option>
+                  <option value="doctor">Shopkeepers</option>
+                  <option value="nurse">Pharmacy</option>
+                  <option value="nurse">Doctors</option>
+                  <option value="nurse">Teahcer</option>
                   <option value="caretaker">Caretaker</option>
+                  <option value="caretaker">Cook</option>
                 </select>
               </div>
               <div className="col-span-2 grid gap-2">
