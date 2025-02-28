@@ -82,7 +82,7 @@ const AllUsers = () => {
         <tbody>
           {users.map((user, index) => (
             <tr key={user.id} className="border">
-              <td className="border p-2">{index + 1}</td> {/* Fixed missing index */}
+              <td className="border p-2">{index + 1}</td>
               <td className="border p-2">{user.name}</td>
               <td className="border p-2">{user.email}</td>
               <td className="border p-2">{user.phoneNumber}</td>
@@ -111,7 +111,7 @@ const AllUsers = () => {
         <tbody>
           {providers.map((provider, index) => (
             <tr key={provider.id} className="border">
-              <td className="border p-2">{index + 1}</td> {/* Fixed missing index */}
+              <td className="border p-2">{index + 1}</td>
               <td className="border p-2">{provider.name}</td>
               <td className="border p-2">{provider.email}</td>
               <td className="border p-2">{provider.phonenumber}</td>
