@@ -16,7 +16,9 @@ const data = {
     { title: "Dashboard", url: "/admin/dashboard" },
     { title: "All Users", url: "/admin/all-users" },
     { title: "Active Donations", url: "/admin/active-donations" },
-    { title: "Complaints", url: "/admin/complaints" }
+    { title: "Complaints", url: "/admin/complaints" },
+    { title: "Verify Documents", url: "/admin/Verify-Doc" },
+    { title: "KYC Requests", url: "/admin/kyc-request" }
   ],
 };
 

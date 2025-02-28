@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import { supabase } from "@/lib/utils/client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -16,6 +17,7 @@ const ActiveDonations = () => {
   const [campaigns, setCampaigns] = useState<Campaign[]>([]);
   const [editId, setEditId] = useState<string | null>(null);
   const [editedCampaign, setEditedCampaign] = useState<Partial<Campaign>>({});
+  const router = useRouter();
 
   useEffect(() => {
     const fetchCampaigns = async () => {
@@ -51,7 +53,9 @@ const ActiveDonations = () => {
       if (error) throw error;
 
       setCampaigns((prev) =>
-        prev.map((item) => (item.id === editId ? { ...item, ...editedCampaign } : item))
+        prev.map((item) =>
+          item.id === editId ? { ...item, ...editedCampaign } : item
+        )
       );
 
       setEditId(null);
@@ -92,7 +96,12 @@ const ActiveDonations = () => {
                 {editId === campaign.id ? (
                   <Input
                     value={editedCampaign.title || ""}
-                    onChange={(e) => setEditedCampaign({ ...editedCampaign, title: e.target.value })}
+                    onChange={(e) =>
+                      setEditedCampaign({
+                        ...editedCampaign,
+                        title: e.target.value,
+                      })
+                    }
                   />
                 ) : (
                   campaign.title
@@ -102,7 +111,12 @@ const ActiveDonations = () => {
                 {editId === campaign.id ? (
                   <Input
                     value={editedCampaign.city || ""}
-                    onChange={(e) => setEditedCampaign({ ...editedCampaign, city: e.target.value })}
+                    onChange={(e) =>
+                      setEditedCampaign({
+                        ...editedCampaign,
+                        city: e.target.value,
+                      })
+                    }
                   />
                 ) : (
                   campaign.city
@@ -113,7 +127,10 @@ const ActiveDonations = () => {
                   <Input
                     value={editedCampaign.organization || ""}
                     onChange={(e) =>
-                      setEditedCampaign({ ...editedCampaign, organization: e.target.value })
+                      setEditedCampaign({
+                        ...editedCampaign,
+                        organization: e.target.value,
+                      })
                     }
                   />
                 ) : (
@@ -124,7 +141,12 @@ const ActiveDonations = () => {
                 {editId === campaign.id ? (
                   <Input
                     value={editedCampaign.contact || ""}
-                    onChange={(e) => setEditedCampaign({ ...editedCampaign, contact: e.target.value })}
+                    onChange={(e) =>
+                      setEditedCampaign({
+                        ...editedCampaign,
+                        contact: e.target.value,
+                      })
+                    }
                   />
                 ) : (
                   campaign.contact
@@ -136,8 +158,19 @@ const ActiveDonations = () => {
                 ) : (
                   <Button onClick={() => handleEdit(campaign)}>Edit</Button>
                 )}
-                <Button variant="destructive" onClick={() => handleDelete(campaign.id)}>
+                <Button
+                  variant="destructive"
+                  onClick={() => handleDelete(campaign.id)}
+                >
                   Delete
+                </Button>
+                <Button
+                  variant="outline"
+                  onClick={() =>
+                    router.push(`/admin/active-donations/${campaign.id}`)
+                  } // Pass the ID
+                >
+                  Details
                 </Button>
               </td>
             </tr>
