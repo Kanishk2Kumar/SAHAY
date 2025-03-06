@@ -18,7 +18,8 @@ const data = {
     { title: "Active Donations", url: "/admin/active-donations" },
     { title: "Complaints", url: "/admin/complaints" },
     { title: "Verify Documents", url: "/admin/Verify-Doc" },
-    { title: "KYC Requests", url: "/admin/kyc-request" }
+    { title: "KYC Requests", url: "/admin/kyc-request" },
+    { title: "Ration Cmpaigns", url: "/admin/ration-campaigns" }
   ],
 };
 
