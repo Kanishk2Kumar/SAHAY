@@ -13,6 +13,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/context/UserContext";
 import { supabase } from "@/lib/utils/client";
+import { Star } from "lucide-react";
 
 const Profile = () => {
   const { user, userDetails, session, userType } = useAuth();
@@ -21,6 +22,7 @@ const Profile = () => {
     userDetails?.location || null
   );
   const [loadingLocation, setLoadingLocation] = useState<boolean>(false);
+  const [rating, setRating] = useState<number>(userDetails?.rating || 0);
 
   useEffect(() => {
     if (!session) {
@@ -71,13 +73,13 @@ const Profile = () => {
           const cityName = await reverseGeocode(latitude, longitude);
 
           const { error } = await supabase
-            .from("user")
+            .from("provider")
             .update({
               location: cityName,
               latitude: latitude,
               longitude: longitude,
             })
-            .eq("userid", user?.id);
+            .eq("providerid", user?.id);
 
           if (error) {
             throw error;
@@ -136,6 +138,21 @@ const Profile = () => {
             <h3 className="text-lg font-semibold">Location:</h3>
             <p className="text-gray-700">{city || "Location not set"}</p>
           </div>
+          {userType === "provider" && (
+            <div>
+              <h3 className="text-lg font-semibold">Rating:</h3>
+              <div className="flex space-x-1">
+                {[1, 2, 3, 4, 5].map((star) => (
+                  <Star
+                    key={star}
+                    className={`w-6 h-6 cursor-pointer ${
+                      star <= rating ? "text-yellow-500" : "text-gray-300"
+                    }`}
+                  />
+                ))}
+              </div>
+            </div>
+          )}
           <div className="space-y-2">
             <Button
               onClick={updateLocation}

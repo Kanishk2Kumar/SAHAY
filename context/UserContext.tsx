@@ -14,6 +14,7 @@ interface UserContextType {
   user: User | null;
   userDetails: any | null;
   session: any | null;
+  userType : string | null;
 }
 
 const UserContext = createContext<UserContextType | undefined>(undefined);
@@ -22,6 +23,7 @@ export const UserProvider = ({ children }: { children: ReactNode }) => {
   const [user, setUser] = useState<User | null>(null);
   const [session, setSession] = useState<any | null>(null);
   const [userDetails, setUserDetails] = useState<any | null>(null);
+  const [userType, setUserType] = useState<string | null>("");
 
   useEffect(() => {
     const getUserDetails = async (userId: string) => {
@@ -31,12 +33,20 @@ export const UserProvider = ({ children }: { children: ReactNode }) => {
         .eq("userid", userId)
         .single();
 
+        if(data?.userType === "ADMIN"){
+          setUserType("admin");
+        }else{
+          setUserType("user")
+        }
+
       if (!data) {
         let { data: providerData, error: providerError } = await supabase
           .from("provider")
           .select("*")
           .eq("providerid", userId)
           .single();
+
+        setUserType("provider")
 
         if (providerData) {
           setUserDetails(providerData);
@@ -86,7 +96,7 @@ export const UserProvider = ({ children }: { children: ReactNode }) => {
   }, []);
 
   return (
-    <UserContext.Provider value={{ user, userDetails, session }}>
+    <UserContext.Provider value={{ user, userDetails, session, userType }}>
       {children}
     </UserContext.Provider>
   );
