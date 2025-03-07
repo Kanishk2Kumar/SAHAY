@@ -1,9 +1,14 @@
-import React from 'react'
+import { Features } from "@/components/Features";
+import Hero from "@/components/Hero";
+import React from "react";
 
 const VendorHome = () => {
   return (
-    <div>VendorHome</div>
-  )
-}
+    <div>
+      <Hero />
+      <Features />
+    </div>
+  );
+};
 
-export default VendorHome
+export default VendorHome;
