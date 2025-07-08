@@ -1,36 +1,71 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🙌 SAHAY: सेवा, आशा और विश्वास का संगम
 
-## Getting Started
+**SAHAY** is a blockchain-powered, AI-integrated platform that ensures **transparent**, **efficient**, and **fair** distribution of essential resources (ration, education materials, medical kits, etc.) through a multi-level access app and web portal for **Providers, NGOs, and Admins**.
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## The Problem
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**Transparent Ration Distribution System**
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+The current systems for distributing critical aid (e.g., food, books, medical kits) suffer from fraud, corruption, and mismanagement. Beneficiaries often don't receive their fair share.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
+## 🎯 Objective
 
-To learn more about Next.js, take a look at the following resources:
+Build a **smart**, **tamper-proof**, and **transparent** resource distribution platform that:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Prevents fraud and corruption  
+- Tracks donations in real-time  
+- Ensures fair and verified beneficiary access  
+- Increases trust and participation among NGOs, providers, and donors  
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 📲 Key Features
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- 🔐 **3-Level Access**: Providers, NGOs, Admin  
+- 📦 **Donation Request Creation & Tracking**  
+- 📍 **Nearby Help Requests**  
+- 📈 **Impact Statistics Dashboard**  
+- 🚨 **Complaints Handling**: Report fraud/delays  
+- ✅ **Shopkeeper KYC & Verification**  
+- 🔄 **Active Campaign Tracking**  
+- 💬 **RAG-based Chatbot** for beneficiary support  
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## 🧠 Innovations & Tech Stack
+
+| Feature                                  | Technology / Tool Used                    |
+|------------------------------------------|-------------------------------------------|
+| 🔗 Blockchain Fund Transfer               | Smart Contracts / Ethereum / Solana       |
+| 🧠 ML Image Verification Pipeline         | Detect fake/AI-generated images            |
+| 📸 Face Recognition Authentication        | Biometric verification of beneficiaries    |
+| 🤖 RAG-based Chatbot                      | Real-time Q&A support using RAG pipeline   |
+| 🌐 NGO Validation & Geo-Legitimacy       | AI web scraping & NLP for registration     |
+
+
+## 🔄 System Workflow
+
+![Flowchart (3)](https://github.com/user-attachments/assets/1935b87f-41a1-4ef3-97ba-01700d416039)
+
+## 📦 ML Workflows
+
+### 🖼️ Image Integrity Verification
+- Detects tampered or AI-generated images  
+- Ensures real beneficiaries are counted correctly  
+
+### 👤 Face Recognition Model
+- Verifies physical presence of beneficiary via biometric scan  
+- Prevents proxy fraud in donation pick-ups  
+
+### 🧾 NGO Validation AI
+- Scrapes government sites & databases  
+- Confirms NGO registration & location  
+
+<div style="display: flex; justify-content: space-around; align-items: center;">
+  <img src="https://github.com/user-attachments/assets/68c0bfb6-3ac3-492b-968f-2d688783f4cb" alt="Image 1" width="45%">
+  <img src="https://github.com/user-attachments/assets/c63273fe-ebca-4952-bba0-3ad08bb22bb8" alt="Image 2" width="45%">
+</div>
+
+## Tech Stack:
+![TechStach (1)](https://github.com/user-attachments/assets/9f18d7fe-7cf7-4c5e-8ebb-38b6058e6879)
